@@ -1,4 +1,5 @@
 const fastify = require('fastify')
+
 const server = fastify()
 
 class ServerRepository {
