@@ -36,8 +36,10 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
+    "@fastify/postgres": "^5.2.0",
     "@types/node": "^18.15.11",
     "fastify": "^4.15.0",
+    "pg": "^8.10.0",
     "pino": "^8.11.0"
   }
 }

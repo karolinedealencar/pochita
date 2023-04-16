@@ -6,9 +6,9 @@ import {
 
 class CreateCatController {
   static create(
-    request: CreateCatRequestInterface
+    body: CreateCatRequestInterface
   ): CreateCatResponseInterface {
-    return CreateCatService.create(request)
+    return CreateCatService.create(body)
   }
 }
 

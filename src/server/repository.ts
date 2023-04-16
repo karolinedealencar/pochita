@@ -1,4 +1,5 @@
 import { fastify, FastifyInstance } from 'fastify'
+import postgres from '@fastify/postgres'
 
 import CreateCatController from '../routes/createCat/controller.js'
 import {
@@ -10,11 +11,13 @@ const server = fastify({ logger: true })
 
 class ServerRepository {
   static start() {
-    return server.listen({ port: 8000 }, (error: Error | null) => {
+    server.listen({ port: 8000 }, (error: Error | null) => {
       if (error) {
         process.exit(1)
       }
     })
+
+    return server
   }
 
   static registerRoutes() {
@@ -35,6 +38,12 @@ class ServerRepository {
 
         return response
       })
+    })
+  }
+
+  static registerDatabase() {
+    server.register(postgres, {
+      connectionString: 'postgres://postgres@localhost/postgres'
     })
   }
 }

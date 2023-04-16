@@ -4,10 +4,8 @@ import {
 } from './interface.js'
 
 class CreateCatRepository {
-  static create(
-    request: CreateCatRequestInterface
-  ): CreateCatResponseInterface {
-    console.log(request)
+  static create(body: CreateCatRequestInterface): CreateCatResponseInterface {
+    console.log(body)
 
     return {
       name: 'lira',

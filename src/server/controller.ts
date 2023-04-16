@@ -8,6 +8,10 @@ class ServerController {
   static registerRoutes() {
     return ServerService.registerRoutes()
   }
+
+  static registerDatabase() {
+    return ServerService.registerDatabase()
+  }
 }
 
 export default ServerController

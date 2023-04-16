@@ -5,10 +5,8 @@ import {
 } from './interface.js'
 
 class CreateCatService {
-  static create(
-    request: CreateCatRequestInterface
-  ): CreateCatResponseInterface {
-    return CreateCatRepository.create(request)
+  static create(body: CreateCatRequestInterface): CreateCatResponseInterface {
+    return CreateCatRepository.create(body)
   }
 }
 
