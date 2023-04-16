@@ -1,4 +1,4 @@
-import { fastify, FastifyInstance, FastifyRequest } from 'fastify'
+import { fastify, FastifyInstance } from 'fastify'
 
 import CreateCatController from '../routes/createCat/controller.js'
 import {
