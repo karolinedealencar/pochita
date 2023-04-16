@@ -8,9 +8,9 @@
   ],
   "compilerOptions": {
     "outDir": "./dist",
+    "module": "nodenext",
     "types": [
       "node"
-    ],
-    "moduleDetection": "force"
+    ]
   }
 }

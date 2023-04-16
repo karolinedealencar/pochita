@@ -1,8 +1,8 @@
-const ServerController = require('./server/controller')
+import ServerController from './server/controller.js'
 
-const start = () => {
-  console.log('Starting program')
+const start = async () => {
   ServerController.start()
+  await ServerController.registerRoutes()
 }
 
 start()

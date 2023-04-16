@@ -1,17 +1,24 @@
-const fastify = require('fastify')
+import { fastify, FastifyInstance } from 'fastify'
 
-const server = fastify()
+const server = fastify({ logger: true })
 
 class ServerRepository {
   static start() {
-    server.listen({ port: 8000 }, (error: Error, address: string) => {
+    return server.listen({ port: 8000 }, (error: Error | null) => {
       if (error) {
         process.exit(1)
       }
+    })
+  }
 
-      console.log(`Listening at address ${address}`)
+  static registerRoutes() {
+    return server.register(async (client: FastifyInstance) => {
+      client.get(
+        '/',
+        async (): Promise<string> => 'Welcome to the world of cats! 🐱'
+      )
     })
   }
 }
 
-module.exports = ServerRepository
+export default ServerRepository
