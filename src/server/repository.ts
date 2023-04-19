@@ -1,5 +1,4 @@
 import { fastify, FastifyInstance } from 'fastify'
-import postgres from '@fastify/postgres'
 
 import CreateCatController from '../cat/create/controller.js'
 import {
@@ -39,16 +38,6 @@ class ServerRepository {
         return response
       })
     })
-  }
-
-  static async registerDatabase() {
-    return server.register(postgres, {
-      connectionString: ''
-    })
-  }
-
-  static async connectDatabase() {
-    return server.pg.connect()
   }
 }
 

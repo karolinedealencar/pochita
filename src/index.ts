@@ -1,10 +1,12 @@
 import ServerController from './server/controller.js'
+import DatabaseController from './database/controller.js'
 
 const start = async () => {
-  await ServerController.start()
+  const server = await ServerController.start()
   await ServerController.registerRoutes()
-  await ServerController.registerDatabase()
-  await ServerController.connectDatabase()
+
+  await DatabaseController.registerOnServer(server)
+  await DatabaseController.connect(server)
 }
 
 start()
