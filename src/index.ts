@@ -4,6 +4,7 @@ const start = async () => {
   await ServerController.start()
   await ServerController.registerRoutes()
   await ServerController.registerDatabase()
+  await ServerController.connectDatabase()
 }
 
 start()

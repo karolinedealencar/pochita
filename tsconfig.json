@@ -9,6 +9,7 @@
   "compilerOptions": {
     "outDir": "./dist",
     "module": "nodenext",
+    "noImplicitAny": false,
     "types": [
       "node"
     ]

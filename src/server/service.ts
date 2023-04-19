@@ -12,6 +12,10 @@ class ServerService {
   static registerDatabase() {
     return ServerRepository.registerDatabase()
   }
+
+  static connectDatabase() {
+    return ServerRepository.connectDatabase()
+  }
 }
 
 export default ServerService

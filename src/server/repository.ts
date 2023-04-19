@@ -1,11 +1,11 @@
 import { fastify, FastifyInstance } from 'fastify'
 import postgres from '@fastify/postgres'
 
-import CreateCatController from '../routes/createCat/controller.js'
+import CreateCatController from '../cat/create/controller.js'
 import {
   CreateCatRequestInterface,
   CreateCatResponseInterface
-} from '../routes/createCat/interface.js'
+} from '../cat/create/interface.js'
 
 const server = fastify({ logger: true })
 
@@ -32,19 +32,23 @@ class ServerRepository {
       client.post<{
         Body: CreateCatRequestInterface
         Reply: CreateCatResponseInterface
-      }>('/', async (request): Promise<CreateCatResponseInterface> => {
+      }>('/cat', async (request): Promise<CreateCatResponseInterface> => {
         const response: CreateCatResponseInterface =
-          await CreateCatController.create(request.body)
+          await CreateCatController.create(request.body, server)
 
         return response
       })
     })
   }
 
-  static registerDatabase() {
-    server.register(postgres, {
-      connectionString: 'postgres://postgres@localhost/postgres'
+  static async registerDatabase() {
+    return server.register(postgres, {
+      connectionString: ''
     })
+  }
+
+  static async connectDatabase() {
+    return server.pg.connect()
   }
 }
 

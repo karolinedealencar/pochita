@@ -5,8 +5,11 @@ import {
 } from './interface.js'
 
 class CreateCatService {
-  static create(body: CreateCatRequestInterface): CreateCatResponseInterface {
-    return CreateCatRepository.create(body)
+  static create(
+    body: CreateCatRequestInterface,
+    server
+  ): Promise<CreateCatResponseInterface> {
+    return CreateCatRepository.create(body, server)
   }
 }
 

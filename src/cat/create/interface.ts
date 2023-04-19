@@ -1,6 +1,5 @@
 interface CreateCatResponseInterface {
-  name: string
-  success: boolean
+  id: string
 }
 
 interface CreateCatRequestInterface {
