@@ -1,4 +1,4 @@
-import catRouter from './cat/router.js'
+import catRouter from './cat/index.js'
 
 class RoutesRepository {
   static registerOnServer(server) {
