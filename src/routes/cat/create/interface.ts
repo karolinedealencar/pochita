@@ -2,8 +2,8 @@ interface CreateCatResponseInterface {
   id: string
 }
 
-interface CreateCatRequestInterface {
+interface CreateCatBodyInterface {
   name: string
 }
 
-export { CreateCatResponseInterface, CreateCatRequestInterface }
+export { CreateCatResponseInterface, CreateCatBodyInterface }

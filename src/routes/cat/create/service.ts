@@ -1,12 +1,12 @@
 import CreateCatRepository from './repository.js'
 import {
-  CreateCatRequestInterface,
+  CreateCatBodyInterface,
   CreateCatResponseInterface
 } from './interface.js'
 
 class CreateCatService {
   static create(
-    body: CreateCatRequestInterface,
+    body: CreateCatBodyInterface,
     server
   ): Promise<CreateCatResponseInterface> {
     return CreateCatRepository.create(body, server)

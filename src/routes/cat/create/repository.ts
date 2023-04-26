@@ -1,11 +1,11 @@
 import {
-  CreateCatRequestInterface,
+  CreateCatBodyInterface,
   CreateCatResponseInterface
 } from './interface.js'
 
 class CreateCatRepository {
   static async create(
-    body: CreateCatRequestInterface,
+    body: CreateCatBodyInterface,
     server
   ): Promise<CreateCatResponseInterface> {
     const result = await server.pg.query(
