@@ -1,9 +1,10 @@
 import postgres from '@fastify/postgres'
+import config from '../config.js'
 
 class DatabasRepository {
   static registerOnServer(server) {
     return server.register(postgres, {
-      connectionString: ''
+      connectionString: config.get('db.connection_string')
     })
   }
 
