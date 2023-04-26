@@ -1,7 +1,7 @@
 import {
   CreateCatBodyInterface,
   CreateCatResponseInterface
-} from './interface.js'
+} from '../interface.js'
 
 class CreateCatRepository {
   static async create(

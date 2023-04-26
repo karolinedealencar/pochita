@@ -3,10 +3,14 @@ import CreateCatService from './service.js'
 import {
   CreateCatBodyInterface,
   CreateCatResponseInterface
-} from './interface.js'
+} from '../interface.js'
 
 class CreateCatController {
-  static async create(request, reply, server) {
+  static async create(
+    request,
+    reply,
+    server
+  ): Promise<CreateCatResponseInterface> {
     const body: CreateCatBodyInterface = request.body
 
     const response: CreateCatResponseInterface = await CreateCatService.create(

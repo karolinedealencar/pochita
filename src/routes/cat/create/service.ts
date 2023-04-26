@@ -2,7 +2,7 @@ import CreateCatRepository from './repository.js'
 import {
   CreateCatBodyInterface,
   CreateCatResponseInterface
-} from './interface.js'
+} from '../interface.js'
 
 class CreateCatService {
   static create(
