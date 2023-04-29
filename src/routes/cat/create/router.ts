@@ -1,3 +1,4 @@
+import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 import CreateCatController from './controller.js'
 
 const bodySchema = {
@@ -15,10 +16,10 @@ const responseSchema = {
   }
 }
 
-const createRouter = server => ({
+const createRouter = (server: FastifyInstance) => ({
   method: 'POST',
   url: '/',
-  handler: (request, reply) =>
+  handler: (request: FastifyRequest, reply: FastifyReply) =>
     CreateCatController.create(request, reply, server),
   schema: {
     body: bodySchema,

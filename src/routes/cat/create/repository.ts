@@ -1,3 +1,4 @@
+import { FastifyInstance } from 'fastify'
 import {
   CreateCatBodyInterface,
   CreateCatResponseInterface
@@ -6,7 +7,7 @@ import {
 class CreateCatRepository {
   static async create(
     body: CreateCatBodyInterface,
-    server
+    server: FastifyInstance
   ): Promise<CreateCatResponseInterface> {
     const result = await server.pg.query(
       'INSERT INTO cat(name) VALUES ($1) RETURNING id',
