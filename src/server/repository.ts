@@ -1,14 +1,18 @@
-import { fastify } from 'fastify'
+import { fastify, FastifyInstance } from 'fastify'
+import config from '../config.js'
 
-const server = fastify({ logger: true })
+const server: FastifyInstance = fastify({ logger: true })
 
 class ServerRepository {
   static start() {
-    server.listen({ port: 8000 }, (error: Error | null) => {
-      if (error) {
-        process.exit(1)
+    server.listen(
+      { host: config.get('ip'), port: config.get('port') },
+      (error: Error | null) => {
+        if (error) {
+          process.exit(1)
+        }
       }
-    })
+    )
 
     return server
   }

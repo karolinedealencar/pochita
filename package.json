@@ -39,6 +39,7 @@
     "@fastify/postgres": "^5.2.0",
     "@types/node": "^18.15.11",
     "convict": "^6.2.4",
+    "convict-format-with-validator": "^6.2.0",
     "dotenv": "^16.0.3",
     "fastify": "^4.15.0",
     "pg": "^8.10.0",
