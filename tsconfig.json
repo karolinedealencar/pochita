@@ -11,7 +11,8 @@
     "module": "nodenext",
     "noImplicitAny": false,
     "types": [
-      "node"
+      "node",
+      "jest"
     ]
   }
 }
