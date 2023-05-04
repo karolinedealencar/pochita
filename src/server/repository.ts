@@ -4,7 +4,7 @@ import config from '../config.js'
 const server: FastifyInstance = fastify({ logger: true })
 
 class ServerRepository {
-  static start() {
+  static async start() {
     server.listen(
       { host: config.get('ip'), port: config.get('port') },
       (error: Error | null) => {

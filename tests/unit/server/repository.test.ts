@@ -1,7 +1,21 @@
 import ServerRepository from '../../../src/server/repository'
 
-describe('server repository', () => {
-  it('should return something', () => {
-    expect(ServerRepository.start()).toBeDefined()
+describe('start function', () => {
+  let server
+
+  beforeAll(async () => {
+    server = await ServerRepository.start()
+  })
+
+  it('should have register property when started', async () => {
+    expect(server).toHaveProperty('register')
+  })
+
+  it('should not have connect property when started', async () => {
+    expect(server).not.toHaveProperty('connect')
+  })
+
+  afterAll(async () => {
+    await server.close()
   })
 })
