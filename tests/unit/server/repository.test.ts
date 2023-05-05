@@ -1,13 +1,10 @@
+import SercerRepository from '../../../src/server/repository'
+
 describe('start function', () => {
   let server
 
   beforeAll(async () => {
-    const serverMock: any = jest.createMockFromModule('../../../src/server/repository')
-    serverMock.start = jest.fn(async () => ({
-      register () {},
-    }))
-
-    server = await serverMock.start()
+    server = await SercerRepository.start()
   })
 
   it('should have register property when started', async () => {
@@ -16,5 +13,9 @@ describe('start function', () => {
 
   it('should not have connect property when started', async () => {
     expect(server).not.toHaveProperty('connect')
+  })
+
+  afterAll(async () => {
+    await server.close()
   })
 })
