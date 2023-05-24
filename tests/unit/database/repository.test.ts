@@ -11,7 +11,6 @@ describe('registerOnServer function', () => {
     }
   }
 
-
   it('should have postgres property on server', async () => {
     const server = await DatabaseRepository.registerOnServer(serverMock)
     expect(server).toHaveProperty('pg')

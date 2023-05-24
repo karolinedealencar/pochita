@@ -1,10 +1,10 @@
-import SercerRepository from '../../../src/server/repository'
+import ServerRepository from '../../../src/server/repository'
 
 describe('start function', () => {
   let server
 
   beforeAll(async () => {
-    server = await SercerRepository.start()
+    server = await ServerRepository.start()
   })
 
   it('should have register property when started', async () => {
