@@ -1,9 +1,9 @@
 import { FastifyInstance } from 'fastify'
-import catRouter from './cat/index.js'
+import OAuthRouter from './oauth/index.js'
 
 class RoutesRepository {
   static registerOnServer(server: FastifyInstance) {
-    server.register(catRouter, { prefix: '/api/v1/cat' })
+    server.register(OAuthRouter, { prefix: '/api/v1/oauth' })
   }
 }
 
